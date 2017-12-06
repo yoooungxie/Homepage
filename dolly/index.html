@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+</head>
+
+<body>
+    <div id="dolly_container">
+    	<span class="sheep black"></span>
+    	<span class="sheep dolly"></span>
+        <span class="circle"></span>
+    </div>
+    <script src="../Home page/js/jquery.min.js"></script>
+    <script src="./jqueryui.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+    	$('.black').draggable({
+            revert: true
+        });
+    	$('.dolly').draggable();
+        $('.circle').droppable({
+            // accept: '.dolly'
+            drop: function(event, ui) {
+                if ($(ui.draggable).hasClass('dolly')) {
+                    $(this).addClass('red');
+                    $(ui.draggable).draggable('disable');
+                }
+            }
+        })
+    })
+    </script>
+</body>
+
+</html>

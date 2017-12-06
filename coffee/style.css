@@ -1,0 +1,244 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ol,
+ul,
+li {
+    list-style-type: none;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+.charector {
+    left: 0%;
+    bottom: 13%;
+    position: absolute;
+    width: 151px;
+    height: 291px;
+    background: url(./images/boy-walk1.png) no-repeat;
+}
+
+.charector.havecoffee {
+    background: url(./images/boy-coffee1.png) no-repeat;
+}
+
+.pauseWalk {
+    -webkit-animation-play-state: paused;
+}
+
+.charector.slowWalk {
+    -webkit-animation-name: person-slow;
+    -webkit-animation-duration: 950ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: steps(1, start);
+    -moz-animation-name: person-slow;
+    -moz-animation-duration: 950ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: steps(1, start)
+}
+
+.charector.havecoffee.slowWalk {
+    -webkit-animation-name: person-coffee-slow;
+    -webkit-animation-duration: 950ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: steps(1, start);
+    -moz-animation-name: person-coffee-slow;
+    -moz-animation-duration: 950ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: steps(1, start)
+}
+
+
+/*普通慢走*/
+
+@-webkit-keyframes person-slow {
+    0% {
+        background: url(./images/boy-walk1.png) no-repeat;
+    }
+    33% {
+        background: url(./images/boy-walk2.png) no-repeat;
+    }
+    66% {
+        background: url(./images/boy-walk3.png) no-repeat;
+    }
+    100% {
+        background: url(./images/boy-walk4.png) no-repeat;
+    }
+}
+
+@-moz-keyframes person-slow {
+    0% {
+        background: url(./images/boy-walk1.png) no-repeat;
+    }
+    33% {
+        background: url(./images/boy-walk2.png) no-repeat;
+    }
+    66% {
+        background: url(./images/boy-walk3.png) no-repeat;
+    }
+    100% {
+        background: url(./images/boy-walk4.png) no-repeat;
+    }
+}
+
+@-webkit-keyframes person-coffee-slow {
+    0% {
+        background: url(./images/boy-coffee1.png) no-repeat;
+    }
+    33% {
+        background: url(./images/boy-coffee2.png) no-repeat;
+    }
+    66% {
+        background: url(./images/boy-coffee3.png) no-repeat;
+    }
+    100% {
+        background: url(./images/boy-coffee4.png) no-repeat;
+    }
+}
+
+@-moz-keyframes person-coffee-slow {
+    0% {
+        background: url(./images/boy-coffee1.png) no-repeat;
+    }
+    33% {
+        background: url(./images/boy-coffee2.png) no-repeat;
+    }
+    66% {
+        background: url(./images/boy-coffee3.png) no-repeat;
+    }
+    100% {
+        background: url(./images/boy-coffee4.png) no-repeat;
+    }
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.coffee-background,
+.cloud-background {
+    width: 100%;
+    height: 100%;
+    background: url(./images/coffebackground.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.cloud-background {
+    background: url(./images/coffebackground2.png) no-repeat;
+    position: relative;
+    background-size: 100% 100%;
+}
+
+.coffee-cloud {
+    position: absolute;
+    width: 290px;
+    height: 95px;
+    background: url(./images/cloud1.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.coffee-cloud-1 {
+    top: 7%;
+}
+
+.coffee-cloud-2 {
+    top: 13%;
+    transform: translateX(400px);
+    background: url(./images/cloud3.png) no-repeat;
+}
+
+.cloud-background .cloud-move {
+    -webkit-animation-name: cloud-change-slow;
+    -webkit-animation-duration: 30s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: cloud-change-slow;
+    -moz-animation-duration: 30s;
+    -moz-animation-iteration-count: infinite;
+}
+
+.charector.boyFly {
+    width: 323px;
+    height: 266px;
+    margin-left: -87px;
+    background: url(./images/boyfly.png) no-repeat;
+}
+
+.charector.change {
+    width: 300px;
+    margin-left: -75px;
+    -webkit-animation-name: person-change-slow;
+    -webkit-animation-duration: 1200ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: steps(1, start);
+    -moz-animation-name: person-change-slow;
+    -moz-animation-duration: 300ms;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: steps(1, start)
+}
+
+@-webkit-keyframes person-change-slow {
+    0% {
+        background: url(./images/boy-coffee1.png) no-repeat;
+    }
+    33% {
+        background: url(./images/boy-change1.png) no-repeat;
+    }
+    66% {
+        background: url(./images/boy-change2.png) no-repeat;
+    }
+    100% {
+        background: url(./images/boy-change3.png) no-repeat;
+    }
+}
+
+@-moz-keyframes person-change-slow {
+    %0 {
+        background: url(./images/boy-coffee1.png) no-repeat;
+    }
+    33% {
+        background: url(./images/boy-change1.png) no-repeat;
+    }
+    66% {
+        background: url(./images/boy-change2.png) no-repeat;
+    }
+    100% {
+        background: url(./images/boy-change3.png) no-repeat;
+    }
+}
+
+@-webkit-keyframes cloud-change-slow {
+    0% {
+        right: -5%;
+    }
+    100% {
+        right: 100%;
+    }
+}
+
+@-moz-keyframes cloud-change-slow {
+    0% {
+        right: -5%;
+    }
+    100% {
+        right: 100%;
+    }
+}

@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+#dolly_container {
+  position: relative;
+  width: 800px;
+  height: 420px;
+  margin: 0 auto;
+  background: url(./images/background.png) no-repeat;
+  background-size: 100% 100%; }
+  #dolly_container .circle {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    position: absolute;
+    top: 131px;
+    right: 16px;
+    z-index: 20; }
+    #dolly_container .circle.red {
+      background: red; }
+  #dolly_container .sheep {
+    width: 123px;
+    height: 69px;
+    position: absolute;
+    right: 30px;
+    display: inline-block;
+    cursor: move;
+    z-index: 21; }
+    #dolly_container .sheep.dolly {
+      bottom: 40px;
+      background: url(./images/sheep-yes.png) no-repeat;
+      background-size: 100% 100%; }
+    #dolly_container .sheep.black {
+      top: 30px;
+      background: url(./images/sheep-no.png) no-repeat;
+      background-size: 100% 100%; }
+
+/*# sourceMappingURL=index.css.map */

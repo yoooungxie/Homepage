@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Puzzle</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/image-puzzle.css" rel="stylesheet" />
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/image-puzzle.js"></script>
+    <style>
+    .clearfix:after {
+        content: '';
+        height: 0;
+        overflow: hidden;
+        clear: both;
+        visibility: hidden;
+        display: block;
+    }
+    
+    .h3-title {
+        background: #4ea9fd;
+        line-height: 48px;
+        border-bottom: 1px solid #ddd;
+    }
+    #imgTitle {
+        color: #fff;
+    }
+
+    #levelPanel ul {
+        padding: 0;
+        margin: 0;
+    }
+    
+    #levelPanel li {
+        list-style: none;
+        color: #AAAAAA;
+        position: relative;
+        float: left;
+    }
+    
+    #levelPanel li input[type=radio] {
+        position: absolute;
+        visibility: hidden;
+    }
+    
+    #levelPanel li label {
+        display: block;
+        position: relative;
+        font-weight: 300;
+        padding: 0 0 0 45px;
+        margin: 0 auto;
+        line-height: 40px;
+        z-index: 9;
+        cursor: pointer;
+        font-size: 14px;
+        -webkit-transition: all 0.25s linear;
+    }
+    
+    #levelPanel li .check {
+        display: block;
+        position: absolute;
+        border: 3px solid #AAAAAA;
+        border-radius: 100%;
+        height: 15px;
+        width: 15px;
+        top: 10px;
+        left: 20px;
+        z-index: 5;
+        transition: border .25s linear;
+        -webkit-transition: border .25s linear;
+    }
+    
+    #levelPanel li .check::before {
+        display: block;
+        position: absolute;
+        content: '';
+        border-radius: 100%;
+        height: 8px;
+        width: 8px;
+        top: 3px;
+        left: 3px;
+        margin: auto;
+        transition: background 0.25s linear;
+        -webkit-transition: background 0.25s linear;
+    }
+    
+    #levelPanel input[type=radio]:checked ~ .check {
+        border: 3px solid #4ea9fd;
+    }
+    
+    #levelPanel input[type=radio]:checked ~ .check::before {
+        background: #4ea9fd;
+    }
+    
+    #levelPanel input[type=radio]:checked ~ label {
+        color: #4ea9fd;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="collage">
+        <!-- <h2>Image Puzzle</h2>
+        <hr /> -->
+        <div id="playPanel" style="padding:5px;display:none;">
+            <div class="h3-title">
+                <h3 id="imgTitle"></h3>
+            </div>
+            <div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
+                <ul id="sortable" class="sortable"></ul>
+                <div id="actualImageBox">
+                    <div id="stepBox">
+                        <div>Steps:</div>
+                        <div class="stepCount">0</div>
+                    </div>
+                    <img id="actualImage" />
+                    <div>Re-arrange to create a picture like this.</div>
+                    <!-- <p id="levelPanel"> -->
+                    <!-- <input type="radio" name="level" id="easy" checked="checked" value="3" />
+                        <label for="easy">Easy</label>
+                        <input type="radio" name="level" id="medium" value="4" />
+                        <label for="medium">Medium</label>
+                        <input type="radio" name="level" id="hard" value="5" />
+                        <label for="hard">Hard</label>
+ -->
+                    <div id="levelPanel">
+                        <ul class="clearfix">
+                            <li>
+                                <input type="radio" id="easy" checked="checked" name="level" value="3">
+                                <label for="easy">Easy</label>
+                                <div class="check"></div>
+                            </li>
+                            <li>
+                                <input type="radio" id="medium" name="level" value="4">
+                                <label for="medium">Medium</label>
+                                <div class="check">
+                                    <div class="inside"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <input type="radio" id="hard" name="level" value="5">
+                                <label for="hard">Hard</label>
+                                <div class="check">
+                                    <div class="inside"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- </p> -->
+                    <!--                     <div>
+                        <button id="btnRule" type="button" class="btn" onclick="rules();">Rules</button>
+                        <button id="newPhoto" type="button" class="btn">Another Photo</button>
+                        <button id="btnReplay" type="button" class="btn" onclick="about();">About</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div id="gameOver" style="display:none;">
+            <div style="background-color: #fc9e9e; padding: 5px 10px 20px 10px; text-align: center; ">
+                <h2 style="text-align:center">Game Over!!</h2> Congratulations!!
+                <br /> You have completed this picture
+                <br /> in <span class="stepCount">0</span> steps.
+                <br />
+                <br />
+                <div>
+                    <button type="button" onclick="window.location.reload(true);">Play Again</button>
+                    <button type="button" onclick="window.location.reload(true);">Share</button>
+                </div>
+            </div>
+        </div>
+        <script>
+        var images = [{
+            src: './images/puzzle.jpg',
+            title: 'Edinburgh Puzzle Game'
+        }];
+
+        $(function() {
+            var gridSize = $('#levelPanel :radio:checked').val();
+            imagePuzzle.startGame(images, gridSize);
+            $('#newPhoto').click(function() {
+                imagePuzzle.startGame(images, gridSize);
+            });
+
+            $('#levelPanel :radio').change(function(e) {
+                var gridSize = $(this).val();
+                imagePuzzle.startGame(images, gridSize);
+            });
+        });
+        // function rules() {
+        //     alert('Re arrange the image parts in a way that it correctly forms the picture. \nThe no. of steps taken will be counted.');
+        // }
+        // function about() {
+        //     alert('Developed by Anurag Gandhi. \nHe can be contacted at: soft.gandhi@gmail.com');
+        // }
+        </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div id="container">
+        <ul class="container-wrap clearfix">
+            <li>
+                <div class="train-background-1">
+                    <div class="sun"></div>
+                </div>
+            </li>
+            <li>
+                <div class="train-background-2">
+                </div>
+            </li>
+            <li>
+                <div class="train-background-3">
+                    <div class="sheepShow sheepShake"></div>
+                </div>
+            </li>
+        </ul>
+        <div id="train" class="trainShow slowWalk"></div>
+    </div>
+    <script src='../fish/js/jquery.min.js'></script>
+    <script src="../coffee/transit.js"></script>
+    <script>
+    $(document).resize(function() {
+        $("#container").css({
+            width: $(document).width(),
+            height: $(document).height()
+        });
+    })
+    $(".container-wrap").css({
+        width: $(document).width() * 3,
+        height: $(document).height()
+    });
+    $("#container .train-background-1").css({
+        width: $(document).width()
+    });
+    $("#container .train-background-2").css({
+        width: $(document).width()
+    });
+    $("#container .train-background-3").css({
+        width: $(document).width()
+    });
+    $("#train").css({
+        top: $('.container-wrap').height() * .77 - 155
+    })
+
+    // xianghou zou
+    function walkTrain(temp, temp2) {
+        var dtd = $.Deferred();
+        var distance = $(document).width() / temp;
+        setTimeout(function() {
+            $('#train').transition({x: distance - temp2}, 3000, 'linear', function() {
+                dtd.resolve();
+            });
+        }, 500);
+        return dtd;
+    }  
+
+    // beijing yidong 
+    function bgMoveToSec() {
+        var dtd = $.Deferred();
+        var liWidth = $('.train-background-1').parent('li').width() * 2;
+        $('.container-wrap').transition({x: - liWidth}, 12000, 'linear', function() {
+            walkTrain(1, 610);
+            dtd.resolve();
+        });
+        return dtd;
+    }
+
+    var start = walkTrain(2, 300).then(function() {
+        return bgMoveToSec();
+    }).then(function() {
+        window.location.reload();
+    });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Edinburgh Wonder Map</title>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="shortcut icon" type="image/png" href="icons/favicon.ico">
+</head>
+
+<body>
+    <div class="l-container hide">
+        <div class="l-body clearfix">
+            <div class="l-main-left fl">
+                <div class="l-level l-level-1 clearfix">
+                    <div class="l-part-left fl">
+                        <span class="cloud cloud1 cloud1Anim"></span>
+                        <span class="cloud cloud2 cloud2Anim"></span>
+                    </div>
+                    <div class="l-part-right fr">
+                        <span class="jinianting"></span>
+                        <span class="jinianta"></span>
+                        <span class="jiniantang"></span>
+                    </div>
+                </div>
+                <div class="l-level l-level-2">
+                    <div class="l-yellow l-yellow-top"></div>
+                    <div class="l-yellow l-yellow-bottom"></div>
+                    <div class="l-yellow l-yellow-mask"></div>
+                    <span class="bus busMove"></span>
+                    <span class="gallery"></span>
+                    <span class="scott"></span>
+                    <span class="ferris-1 ferrisRorate"></span>
+                </div>
+                <div class="l-level l-level-3">
+                    <div class="l-part-left fl">
+                        <span class="tiegui"></span>
+                        <span class="tiegui2"></span>
+                    </div>
+                    <div class="l-part-center fl">
+                        <div class="l-yellow l-yellow-left"></div>
+                        <div class="l-yellow l-yellow-right"></div>
+                        <span class="train trainSmoke"></span>
+                    </div>
+                    <div class="l-part-right fr">
+                        <span class="tiegui"></span>
+                    </div>
+                </div>
+                <div class="l-level l-level-4">
+                    <div class="l-yellow l-yellow-top"></div>
+                    <div class="l-yellow l-yellow-bottom"></div>
+                    <div class="l-yellow l-yellow-mask"></div>
+                    <span class="quiz quizShake"></span>
+                    <span class="castle"></span>
+                    <span class="wutai"></span>
+                    <a href="https://www.instagram.com/explore/tags/edinburgh/" target="_blank">
+                        <span class="camera"></span>
+                        <span class="camera-inner cameraRotate"></span>
+                    </a>
+                </div>
+                <div class="l-level l-level-5">
+                    <div class="l-part-left fl">
+                        <span class="pingtu"></span>
+                        <span class="ren renShow"><audio src="./videos/Scotland the Brave (Bagpipes).mp3" preload="preload"></audio></span>
+                        <span class="coffee" title="coffee"></span>
+                        <span class="dog dogShow" title="dog"></span>
+                        <span class="museum" title="museum"></span>
+                        <span class="church" title="church"></span>
+                        <span class="oldcollege" title="oldcollege"></span>
+                    </div>
+                    <div class="l-part-center fl">
+                        <div class="l-yellow l-yellow-left"></div>
+                        <div class="l-yellow l-yellow-right"></div>
+                    </div>
+                    <div class="l-part-right fr">
+                        <span class="holyrood"></span>
+                        <span class="sun sunShow"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="l-main-right fr">
+                <div class="fish fish-1 fishShake-1"></div>
+                <div class="fish fish-2 fishShake-2"></div>
+            </div>
+        </div>
+        <div class="share"> <a href="javascript:void(0)">Share</a>
+            <ul class="shareLinks">
+                <li>
+                    <a href="javascript:void(0)"><img src="icons/facebook.png" alt="FaceBook"></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><img src="icons/twitter.png" alt="Twitter"></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><img src="icons/wechat.png" alt="Wechat"></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><img src="icons/weibo.png" alt="Weibo"></a>
+                </li>
+            </ul>
+        </div>
+        <footer class="f-text">
+            <div class="f-top">
+                <div class='content'>
+                    <div class='visible'>
+                        <p></p>
+                        <ul>
+                            <li style="color:#3ccaff">Edinburgh Wonder Map</li>
+                            <li>Be curious !</li>
+                            <li>Have fun !</li>
+                            <li>Share with friends !</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="f-bottom">Copyright © by Yang Xie, made with 100% recycled pixels</p>
+        </footer>
+        <div class="m-modal m-dialog" id="cloud">
+            <div class="m-content">
+                <img src="images/cloud.png" alt="cloud">
+                <div class="dialog-content cloud-content">
+                    <h1>How’s the weather in Edinburgh? </h1>
+                    <p>Dislike raining? Plan your trip in Edinburgh changeable weather. </p>
+                    <p><a href="http://www.bbc.co.uk/weather/2650225" target="_blank">http://www.bbc.co.uk/weather/2650225</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="m-modal m-dialog" id="bus">
+            <div class="m-content">
+                <video src="videos/bustour.mp4" preload="preload" loop></video>
+                <div class="dialog-content bus-content">
+                    <h1>Local Bus Service</h1>
+                    <p>Travel by bus? Know more about the timetables and tickets.</p>
+                    <p><a href="https://lothianbuses.co.uk/" target="_blank">https://lothianbuses.co.uk/</a></p>
+                    <h1>Edinburgh City Bus Tours</h1>
+                    <p>Take a sightseeing bus around the city and key attractions.</p>
+                    <p><a href="http://edinburghtour.com/" target="_blank">http://edinburghtour.com/</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="m-modal m-dialog" id="gallery">
+            <div class="m-content">
+                <img src="./images/gallery.jpg" alt="gallery">
+                <div class="dialog-content gallery-content">
+                    <h1>Scottish National Gallery</h1>
+                    <p>Learn about 10 must-see masterpieces in Scottish national gallery, click <a href="https://www.nationalgalleries.org/visit/must-sees" target="_blank"><u>here</u></a></p>
+                    <p>The Scottish National Gallery is the national art gallery of Scotland. It is located on The Mound in central Edinburgh, in a neoclassical building designed by William Henry Playfair, and first opened to the public in 1859. The gallery houses the Scottish national collection of fine art, including Scottish and international art from the beginning of the Renaissance up to the start of the 20th century.</p>
+                    <p>Admission is free. A charge may be made for special exhibitions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="m-modal m-dialog" id="scott">
+            <div class="m-content">
+                <iframe width="800" height="450" src="https://www.youtube-nocookie.com/embed/-8c4UleNgu0" frameborder="0" allowfullscreen></iframe>
+                <div class="dialog-content scott-content">
+                    <h1>Overlook the City</h1>
+                    <p>Scott Monument is the world’s largest monument to a writer – <u>Sir Walter Scott</u><a href="https://en.wikipedia.org/wiki/Walter_Scott" target="_blank">(https://en.wikipedia.org/wiki/Walter_Scott)</a>.With its fantastic Victorian Gothic style, it has become one of the most famous landmarks in Edinburgh. By climbing a total of 287 steps, you can reach the highest platform of the monument, and get spectacular panoramic views of central Edinburgh.</p>
+                </div>
+            </div>
+        </div>
+        <div class="m-modal m-dialog" id="dog">
+            <div class="m-content">
+                <video src="videos/Greyfriars Bobby - Trailer .mp4" preload="preload" loop></video>
+                <div class="dialog-content dog-content">
+                    <h1>Greyfriars Bobby</h1>
+                    <p>Greyfriars Bobby is the most famous dog in Scotland. Bobby, a Skye Terrier, became known in 19th-century Edinburgh for supposedly spending 14 years guarding the grave of his owner until he died himself on 14 January 1872. The story continues to be well known in Scotland, through several books and films, and a prominent commemorative statue and nearby graves act as a tourist attraction.
+                    </p>
+                    <p>
+                        The statue of Bobby sits at the corner of Edinburgh's Candlemaker Row and George IV Bridge.
+                    </p>
+                    <p><a href="http://www.historic-uk.com/HistoryUK/HistoryofScotland/Greyfriars-Bobby/" target="_blank"><u>Find out more.</u></a></p>
+                </div>
+            </div>
+        </div>
+        <div class="m-modal m-dialog" id="train">
+            <div class="m-content">
+                <iframe src="../train/index.html" width="800" height="450" frameborder="0" name='train'></iframe>
+                <div class="dialog-content train-content">
+                    <h1>Overlook the City</h1>
+                    <p>Scott Monument is the world’s largest monument to a writer – <u>Sir Walter Scott</u><a href="https://en.wikipedia.org/wiki/Walter_Scott" target="_blank">(https://en.wikipedia.org/wiki/Walter_Scott)</a>.With its fantastic Victorian Gothic style, it has become one of the most famous landmarks in Edinburgh. By climbing a total of 287 steps, you can reach the highest platform of the monument, and get spectacular panoramic views of central Edinburgh.</p>
+                    <p><a href="https://www.google.co.uk/maps/place/Waverley+Railway+Station,+Edinburgh+EH1+1BB/@55.9519361,-3.1917565,17z/data=!3m1!4b1!4m5!3m4!1s0x4887c78fbef1f32b:0x7161189432e275bc!8m2!3d55.9519331!4d-3.1895678?hl=zh-CN" target="_blank">Find it</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="m-modal m-dialog" id="coffee">
+            <div class="m-content">
+                <iframe src="../coffee/index.html" width="800" height="450" frameborder="0" name='coffee'></iframe>
+                <div class="dialog-content coffee-content">
+                    <h1>The Elephant House</h1>
+                    <p>Made famous as the place of inspiration to J.K. Rowling, who sat writing much of her early novels in the back room overlooking Edinburgh Castle.
+                    </p>
+                    <p>
+                        If you are a Harry Potter fan, you can’t miss it!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="m-modal m-dialog" id="oldcollege">
+            <div class="m-content">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2suk!4v1470551071531!6m8!1m7!1sF%3A-kKC1Cvh5xaU%2FV20w8tIMFgI%2FAAAAAAAAHNU%2FpFIdy-nv-zgyj8epglU6pK8Yhi5-Hl04gCLIB!2m2!1d55.94745899999999!2d-3.1872204!3f266.58!4f7.409999999999997!5f0.7820865974627469" width="800" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <div class="dialog-content oldcollege-content">
+                    <h1>Overlook the City</h1>
+                    <p>Scott Monument is the world’s largest monument to a writer – <u>Sir Walter Scott</u><a href="https://en.wikipedia.org/wiki/Walter_Scott" target="_blank">(https://en.wikipedia.org/wiki/Walter_Scott)</a>.With its fantastic Victorian Gothic style, it has become one of the most famous landmarks in Edinburgh. By climbing a total of 287 steps, you can reach the highest platform of the monument, and get spectacular panoramic views of central Edinburgh.</p>
+                </div>
+            </div>
+        </div>
+        <div class="m-modal m-dialog" id="jinian">
+            <div class="m-content">
+                <div class="jcarousel">
+                    <ul class="clearfix">
+                        <li>
+                            <img src="./images/caltonhill1.png" alt="">
+                            <div class="dialog-content jinian-content">
+                                <h1>Calton Hill</h1>
+                                <p>Calton hill is a hill in central Edinburgh, Scotland, situated beyond the east end of Princes Street and included in the city's UNESCO World Heritage Site. Views of, and from, the hill are often used in photographs and paintings of the city.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/caltonhill2.jpg" alt="">
+                            <div class="dialog-content jinian-content">
+                                <h1>Dugald Stewart Monument</h1>
+                                <p>The Dugald Stewart Monument is a memorial to the Scottish philosopher Dugald Stewart (1753–1828). It is situated on Calton Hill overlooking Edinburgh city centre and was completed in August 1831. Dugald Stewart was a professor at the University of Edinburgh, holding the chair of moral philosophy from 1786 until his death. The Royal Society of Edinburgh commissioned the monument and selected its site in 1830. The monument is modeled on the Choragic Monument of Lysicrates in Athens, Greece and is a circular temple of 9 fluted Corinthian columns around an elevated urn. This example of the architecture of ancient Greece had been brought to wider attention by James "Athenian" Stuart and Nicholas Revett's illustrated survey, The Antiquities of Athens, published in 1762.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/caltonhill3.jpg" alt="">
+                            <div class="dialog-content jinian-content">
+                                <h1>Nelson Monument</h1>
+                                <p>The Nelson Monument is a commemorative tower in honour of Vice Admiral <a href="https://en.wikipedia.org/wiki/Horatio_Nelson,_1st_Viscount_Nelson" target="_blank"><u>Horatio Nelson</u></a>, located in Edinburgh, Scotland. It is situated on top of Calton Hill, and provides a dramatic termination to the vista along Princes Street from the west. The monument was built between 1807 and 1815 to commemorate Nelson's victory over the French and Spanish fleets at the Battle of Trafalgar in 1805, and his own death at the same battle.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/caltonhill4.png" alt="">
+                            <div class="dialog-content jinian-content">
+                                <h1>National Monument of Scotland</h1>
+                                <p>The National Monument of Scotland, on Calton Hill in Edinburgh, is Scotland's national memorial to the Scottish soldiers and sailors who died fighting in the Napoleonic Wars.[1][2] It was intended, according to the inscription, to be "A Memorial of the Past and Incentive to the Future Heroism of the Men of Scotland".[3] The monument dominates the top of Calton Hill, just to the east of Princes Street. It was designed during 1823-6 by Charles Robert Cockerell and William Henry Playfair and is modelled upon the Parthenon in Athens. Construction started in 1826 and, due to the lack of funds, was left unfinished in 1829. This circumstance gave rise to various nicknames such as "Scotland's Disgrace", "Edinburgh's Disgrace", "the Pride and Poverty of Scotland" and "Edinburgh's Folly".
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="javascript:void(0)" class="jcarousel-control-prev"></a>
+                    <a href="javascript:void(0)" class="jcarousel-control-next"></a>
+                </div>
+            </div>
+        </div>
+        <div class="m-modal m-dialog" id="castle">
+            <div class="m-content">
+                <iframe width="800" height="450" src="https://www.youtube-nocookie.com/embed/NZ5UaWe5DcE" frameborder="0" allowfullscreen></iframe>
+                <div class="dialog-content castle-content">
+                    <h1>Edinburgh Castle</h1>
+                    <p>Set atop a craggy extinct volcano high above Scotland’s capital, Edinburgh Castle is unquestionably Scotland’s most famous and important castle. This sprawling complex houses the Crown Jewels, the Stone of Destiny and Mons Meg. Get there in time for the firing of the One O’ Clock Gun. The firing of the One o’clock Gun dates back to 1861 when it allowed ships in the Firth of Forth to set the maritime clocks they needed to navigate the world’s oceans. The idea was brought to Edinburgh from Paris by businessman John Hewitt. The firing of the One o’clock Gun dates back to 1861 when it allowed ships in the Firth of Forth to set the maritime clocks they needed to navigate the world’s oceans. The idea was brought to Edinburgh from Paris by businessman John Hewitt. The gun is fired at 1pm every day except Sundays, Christmas Day or Good Friday, with crowds gathering to enjoy the spectacle.
+                    </p>
+                    <p><a href="http://www.edinburghcastle.gov.uk/" target="_blank"><u>Find out more.</u></a></p>
+                </div>
+            </div>
+        </div>
+        <div class="m-modal m-dialog" id="wutai">
+            <div class="m-content">
+                <img src="./images/tattoo.jpg" alt="wutai">
+                <div class="dialog-content wutai-content">
+                    <h1>The Royal Edinburgh Military Tattoo</h1>
+                    <p>The Royal Edinburgh Military Tattoo is an annual series of Military tattoos performed by British Armed Forces,Commonwealth and International military bands. The event takes place annually throughout August as part of the wider Edinburgh Festival. Taking place on the esplanade of Edinburgh's iconic Castle, enjoy an unforgettable evening of music, ceremony, theatre and dance！
+                    </p>
+                    <p><a href="http://www.edintattoo.co.uk/" target="_blank"><u>Find out more.</u></a></p>
+                </div>
+            </div>
+        </div>
+        <div class="m-modal m-dialog" id="church">
+            <div class="m-content">
+                <img src="./images/cathedral.jpg" alt="church">
+                <div class="dialog-content church-content">
+                    <h1>St Giles’ Cathedral</h1>
+                    <p>Founded in the 1120s, St Giles' was the church of John Knox during the Reformation and is often referred to as the 'Cradle of Presbyterianism'. Highlights of a visit include our beautiful stained glass windows. The impressive Rieger organ was installed in 1992 and the famous Thistle Chapel, home of the Knights of the Order of the Thistle, Scotland's great order of chivalry designed by Robert Lorimer for the Order of the Thistle, was added in 1911 </p>
+                    <p>St Giles' is situated on the historic Royal Mile, halfway between Edinburgh Castle and the Palace of Holyroodhouse. </p>
+                </div>
+            </div>
+        </div>
+        <div class="m-modal m-dialog" id="holyrood">
+            <div class="m-content">
+                <img src="./images/holyrood.jpg" alt="holyrood">
+                <div class="dialog-content holyrood-content">
+                    <h1>Palace of Holyroodhouse</h1>
+                    <p>Visit The Palace of Holyroodhouse, Her Majesty The Queen's official residence in Scotland. Standing at the end of Edinburgh's historic Royal Mile, this fine palace is the home of Scottish royal history.
+                    </p>
+                    <p>
+                        At the Palace of Holyroodhouse, visitors can explore 14 magnificent historic and State Apartments, the romantic ruins of the 12th-century Holyrood Abbey and remarkable royal gardens, all with a complimentary audio tour. Best known as the home of Mary, Queen of Scots, the Palace was the setting for many dramatic episodes in her short reign. Today, the State Apartments are used regularly by The Queen for State ceremonies and official entertaining.
+                    </p>
+                    <p><a href="https://www.royalcollection.org.uk/visit/palace-of-holyroodhouse" target="_blank"><u>Find out more.</u></a></p>
+                </div>
+            </div>
+        </div>
+        <div class="m-modal m-dialog" id="fish">
+            <div class="m-content">
+                <div class="dialog-content">
+                    <h3>Rule: Fish mommy  should eat seeds to feed baby. Help the fish baby grow up! </h3>
+                </div>
+                <iframe src="../fish/index.html" width="800" height="600" frameborder="0" name='fish'></iframe>
+            </div>
+        </div>
+        <div class="m-modal m-dialog" id="museum">
+            <div class="m-content">
+                <iframe src="../dolly/index.html" width="800" height="420" frameborder="0" name='dolly'></iframe>
+                <div class="dialog-content museum-content">
+                    <h1>National Museum of Scotland</h1>
+                    <p>Fresh from a £47 million redevelopment, the museum houses a spectacular array of over 20,000 fascinating artefacts. The magnificently diverse collections will take you on an inspirational journey through the history of Scotland, the wonders of nature, world cultures and the excitement of science and discovery – all under one roof.</p>
+                    <p>The world’s first cloned mammal, Dolly the sheep is exhibited here.</p>
+                    <p><a href="http://www.nms.ac.uk/" target="_blank"><u>Find out more.</u></a></p>
+                </div>
+            </div>
+        </div>
+        <div class="m-modal m-dialog" id="sun">
+            <div class="m-content">
+                <iframe src="../sun/index.html" width="800" height="450" frameborder="0" name='sun'></iframe>
+                <div class="dialog-content sun-content">
+                    <h1>Arthur’s Seat</h1>
+                    <p>Arthur’s Seat is Arthur's Seat is the main peak of the group of mountains in Edinburgh, United Kingdom which form most of Holyrood Park, described by Robert Louis Stevenson as "a hill for magnitude, a mountain in virtue of its bold design".</p>
+                    <p>It’s a good place to go for a walk in sunny days. Why not climb the mountain with your friends or family, overlook the whole city, watch the sunrise or sunset ?</p>
+                </div>
+            </div>
+        </div>
+        <div class="m-modal m-dialog" id="quiz">
+            <div class="m-content">
+                <iframe src="./quiz.html" width="800" height="100%" frameborder="0" name='quiz'></iframe>
+                <div class="dialog-content quiz-content">
+                    <!-- <h1>Arthur’s Seat</h1>
+                    <p>Arthur’s Seat is Arthur's Seat is the main peak of the group of mountains in Edinburgh, United Kingdom which form most of Holyrood Park, described by Robert Louis Stevenson as "a hill for magnitude, a mountain in virtue of its bold design".</p>
+                    <p>It’s a good place to go for a walk in sunny days. Why not climb the mountain with your friends or family, overlook the whole city, watch the sunrise or sunset ?</p>
+ --></div>
+            </div>
+        </div>
+        <div class="m-modal m-dialog" id="puzzle">
+            <div class="m-content" style="padding-top: 150px;">
+                <iframe src="../imagepuzzle/index.html" width="800" height="100%" frameborder="0" name='puzzle'></iframe>
+                <div class="dialog-content puzzle-content"></div>
+            </div>
+        </div>
+        <div class="m-overlay"></div>
+    </div>
+    <div id="loader" class="pageload-overlay" data-opening="m -5,-5 0,70 90,0 0,-70 z m 5,35 c 0,0 15,20 40,0 25,-20 40,0 40,0 l 0,0 C 80,30 65,10 40,30 15,50 0,30 0,30 z">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 80 60" preserveAspectRatio="none">
+            <path d="m -5,-5 0,70 90,0 0,-70 z m 5,5 c 0,0 7.9843788,0 40,0 35,0 40,0 40,0 l 0,60 c 0,0 -3.944487,0 -40,0 -30,0 -40,0 -40,0 z" />
+        </svg>
+    </div>
+    <div class="loader-text">
+        <h2>Edinburgh Wonder Map</h2>
+    </div>
+    <!-- /pageload-overlay -->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/snap.svg-min.js"></script>
+    <script src="./js/jqueryScroll.js"></script>
+    <script src="./js/jcarousel.js"></script>
+    <script src="./js/classie.js"></script>
+    <script src="./js/svgLoader.js"></script>
+    <script>
+    $(document).resize(function() {
+        $(".l-body").css({
+            width: $(document).width(),
+            height: $(document).height()
+        });
+    })
+    $(".l-body").css({
+        width: $(document).width(),
+        height: $(document).height()
+    })
+    </script>
+    <script>
+    var loader = new SVGLoader(document.getElementById('loader'), {
+        speedIn: 400,
+        easingIn: mina.easeinout
+    });
+
+    function init() {
+        loader.show();
+        setTimeout(function() {
+            loader.hide(function() {
+                $('.l-container').removeClass('hide');
+                $('.loader-text').addClass('hide');
+            });
+            // setTimeout(function() {
+            //     $('.l-container').removeClass('hide');
+            //     $('.loader-text').addClass('hide');
+            // }, 200)
+        }, 2000);
+    }
+    init();
+    </script>
+    <script src='./index.js'></script>
+</body>
+
+</html>

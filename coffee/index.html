@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <ul class="container-wrap clearfix">
+            <li>
+                <div class="coffee-background">
+                </div>
+            </li>
+            <li>
+                <div class="cloud-background">
+                    <div class="coffee-cloud coffee-cloud-1 cloud-move"></div>
+                    <div class="coffee-cloud coffee-cloud-2  cloud-move"></div>
+                </div>
+            </li>
+        </ul>
+        <div id="boy" class="charector slowWalk"></div>
+    </div>
+    <script src="../fish/js/jquery.min.js"></script>
+    <script src="transit.js"></script>
+    <script>
+    $("#container ul").css({
+        width: $(document).width() * 2,
+        height: $(window).height()
+    });
+    $("#container .coffee-background").css({
+        width: $(document).width(),
+        height: $(window).height()
+    });
+    $("#container .cloud-background").css({
+        width: $(document).width(),
+        height: $(window).height()
+    });
+    </script>
+    <script>
+    // 走向咖啡馆
+    function walkToCoffee() {
+        var dtd = $.Deferred();
+        var distance = $(document).width() / 2;
+        setTimeout(function() {
+            $('#boy').transition({x: distance - 75}, 3000, 'linear', function() {
+                var _offset = $("#boy").offset();
+                $('#boy').css({
+                    left: _offset.left,
+                    top: _offset.top,
+                    transform: "none"
+                })
+                dtd.resolve();
+            });
+        }, 500);
+        return dtd;
+    }
+
+    // boy 缩小
+    function boyScale() {
+        var dtd = $.Deferred();
+        var instanceX;
+        var _tempBoy = $('#boy').offset();
+        instanceX = ($(document).width() / 2) - (_tempBoy.left + $('#boy').width() / 2);
+        $("#boy").transition({
+            transform: 'translate(' + instanceX + 'px,-140px),scale(0.3,0.3)',
+            opacity: 0.1
+        }, 2000, function() {
+            $('#boy').css({opacity: 0});
+            $('#boy').addClass("havecoffee");
+            dtd.resolve();
+        });
+        return dtd;
+    }
+
+    // boy 放大
+    function boyBig() {
+        var dtd = $.Deferred();
+        $("#boy").transition({
+            transform: 'scale(1)',
+            opacity: 1
+        }, 2000, function() {
+            dtd.resolve();
+        });
+        return dtd;
+    }
+
+    // 移动背景
+    function bgMoveToSec() {
+        var dtd = $.Deferred();
+        var liWidth = $('.coffee-background').parents('li').width();
+        $('.coffee-background').parents('ul').transition({x: -liWidth / 2}, 2500, function() {
+            dtd.resolve();
+        });
+        return dtd;
+    }
+
+    // 变身
+    function boyChange() {
+        var dtd = $.Deferred();
+        $("#boy").removeClass('havecoffee').removeClass('slowWalk').addClass('change');
+        $("#boy").bind('animationend', function() {
+            $(this).removeClass('change').addClass('boyFly');
+            dtd.resolve();
+        })
+        return dtd;
+    }
+
+    // fly
+    function boyFly() {
+        var dtd = $.Deferred();
+        var liWidth = $('.coffee-background').parents('li').width();
+        $('.coffee-background').parents('ul').transition({x: -liWidth}, 3000, function() {
+        });
+        var _x = $(document).width();
+        var _y = $(window).height();
+        $('#boy').transition({transform: 'translate(' + _x / 2 + 'px, ' + - 1 * _y / 2  + 'px),scale(.3, .3)',
+            opacity: 0}, 3000, function() {
+                dtd.resolve();
+            });
+        return dtd;
+    }
+
+    var start = walkToCoffee();
+    start.then(function() {
+        return boyScale();
+    }).then(function() {
+        return boyBig();
+    }).then(function() {
+        return bgMoveToSec();
+    }).then(function() {
+        return boyChange();
+    }).then(function() {
+        return boyFly();    
+    }).then(function() {
+        window.location.reload();
+    });
+    </script>
+</body>
+
+</html>
